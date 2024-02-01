@@ -1,0 +1,51 @@
+@Library('jenkins-shared-library') _
+
+pipeline {
+    agent any
+    environment {
+        DOCKER_REGISTRY = "ezzatelshazly"
+        DOCKER_IMAGE = "task6-jenkins-pipeline-1"
+        imageTagApp = "build-${BUILD_NUMBER}-app"
+        imageNameapp = "${DOCKER_REGISTRY}:${imageTagApp}"
+        OPENSHIFT_PROJECT = 'ezzatelshazly'
+        GITHUB_REPO = "EzzatELshazly/new-app"
+        OPENSHIFT_SERVER = 'https://api.ocpuat.devopsconsulting.org:6443'
+        APP_SERVICE_NAME = 'task6-jenkins-pipeline-1'
+        APP_PORT = '8080'
+        APP_HOST_NAME = 'task6-jenkins-pipeline-1.apps.ocpuat.devopsconsulting.org'
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                checkoutRepo.checkoutRepo("https://github.com/${GITHUB_REPO}.git", 'main')
+            }
+        }
+        stage('Unit Test before building image') {
+            steps {
+                runUnitTest.runUnitTest()
+            }
+        }
+
+        stage('SonarQube Test Analysis') {
+            steps {
+                runSonarQube.runSonarQube()
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                buildDockerImage.buildDockerImage(imageNameApp, DOCKER_REGISTRY, DOCKER_IMAGE)
+            }
+        }
+        stage('Push Image to DockerHub') {
+            steps {
+                pushDockerImage.pushDockerImage(DOCKER_REGISTRY, DOCKER_IMAGE, imageTagApp)
+            }
+        }
+        stage('Deploy image on OpenShift') {
+            steps {
+                deployAppOnOpenshift.deployAppOnOpenshift(OPENSHIFT_SERVER, OPENSHIFT_PROJECT, DOCKER_IMAGE, imageTagApp, APP_SERVICE_NAME)
+            }
+        }
+    }
+}
