@@ -1,0 +1,11 @@
+---
+- name: Configure EC2 Instances
+  hosts: _IvolveEc2 
+  become: yes
+  roles:
+    - git
+    - docker
+    - java
+    - jenkins
+    - sonarqube
+    - environment

@@ -1,0 +1,17 @@
+---
+- name: Copy docker-compose from local machine to managed host
+  copy:
+    src: /home/student/projectAnsibleTest3/roles/sonarqube/files/docker-compose-sonar.yml
+    dest: /home/student/
+
+- name: Executing necessary commands for SonarQube
+  command: "{{ item }}"
+  loop:
+    - sysctl -w vm.max_map_count=524288
+    - sysctl -w fs.file-max=131072
+    - ulimit -n 131072
+    - ulimit -u 8192
+ 
+
+- name: Run Docker Compose
+  command: "docker compose -f /home/student/docker-compose-sonar.yml  up -d"
