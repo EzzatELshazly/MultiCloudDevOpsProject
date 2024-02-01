@@ -33,7 +33,13 @@ Provision and manage a complete AWS infrastructure using Terraform, enabling IaC
 
 **Deploying the terraform modules to provision resources:**
 * Install AWS CLI and add your AWS user access key and secret access key to enable
-  
+
+```shell
+$ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+$ unzip awscliv2.zip
+$ sudo ./aws/install
+$ aws configure
+```
 <p align="center"><img src="screenshots/terraform/terraform tree last.png" width="90%" height="90%">
 <br><em>Terraform structure</em> 
 </p>
@@ -42,12 +48,6 @@ Provision and manage a complete AWS infrastructure using Terraform, enabling IaC
 <br><em>Terraform apply results</em> 
 </p>
 
-```shell
-$ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-$ unzip awscliv2.zip
-$ sudo ./aws/install
-$ aws configure
-```
 ### 3. EC2 Instance Configuration Using Ansible
 Utilizing Ansible for configuring AWS EC2 instances to host services such as Git, Docker, Java, Jenkins, SonarQube, and OpenShift. This approach ensures consistent and repeatable setups across instances, leading to fully configured and operational EC2 instances ready to support various stages of the DevOps pipeline.
 1. Create a key pair on AWS. Download it to be used in the dynamic inventory and change its permissions as follows:
