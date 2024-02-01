@@ -26,7 +26,6 @@ This project aims to establish a fully automated DevOps pipeline for deploying a
 
 The objective of automating the deployment of a Spring Boot application within an OpenShift cluster is achieved through Jenkins. By developing Jenkins pipelines that efficiently manage the deployment lifecycle from code commit to production deployment, we ensure a scalable and resilient process. 
 
-{screenshots}
 
 ### 2. AWS Infrastructure Provisioning Using Terraform
 
@@ -37,9 +36,6 @@ Provision and manage a complete AWS infrastructure using Terraform, enabling IaC
 **Deploying the terraform modules to provision resources:**
 * Install AWS CLI and add your AWS user access key and secret access key to enable  
 
-<p align="center"><img src="link" width="90%" height="90%">
-<br><em>caption</em>
-</p>
 
 ```shell
 $ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
@@ -70,7 +66,6 @@ Containerizing the Java application is a key part of this project, ensuring envi
 
 Automate the CI/CD process using Jenkins, thereby streamlining the application deployment lifecycle. The development of a Jenkins pipeline script integrates various stages, including code build, testing, and deployment. This results in a seamless, automated pipeline that accelerates the release cycle and reduces manual intervention.
 
-{screenshots}
 
 ## Conclusion
 
