@@ -5,7 +5,7 @@
 
 This project aims to establish a fully automated DevOps pipeline for deploying a Spring Boot application. Leveraging a suite of powerful tools including Jenkins, OpenShift, Terraform, Ansible, and Docker, the project embodies the principles of Infrastructure as Code (IaC), Continuous Integration (CI), and Continuous Deployment (CD). The end goal is to achieve streamlined, automated, and efficient deployment processes with robust monitoring and alerting capabilities.
 
-<p align="center"><img src="link" width="90%" height="90%">
+<p align="center"><img src="screenshots/Architecture.png" width="90%" height="90%">
 <br><em>caption</em>
 </p>
 
