@@ -83,7 +83,7 @@ $ ansible-playbook -i inventory/aws_ec2.yml playbook.yml
 </p>
 
 ### 4. Centralized Monitoring and Logging with OpenShift
-Implement a centralized monitoring and logging system within the OpenShift cluster. We gain insights into application performance and overall cluster health, thus enhancing operational visibility and intelligence.
+Implemented a centralized monitoring and logging system within the OpenShift cluster as we mentioned in the instructions provided in the reposistory in the instructions folder(Instructions/Instructions-for-setup-for-centralized-loggingTask8.docx). We gain insights into application performance and overall cluster health, thus enhancing operational visibility and intelligence.
 
 ### 5. Containerization of the Java Application
 
