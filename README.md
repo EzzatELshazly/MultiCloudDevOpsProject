@@ -65,7 +65,7 @@ $ chmod 400 IvolveKey.pem
 ```
 2. Run the ansible playbook using the following command
 ```shell
-$ ansible-playbook -i inventory/aws_ec2.yml playbook.yml
+$ ansible-playbook -i inventory/aws_ec2.yml ec2.yml
 ```
 <p align="center"><img src="screenshots/Ansible/ansible structure.png" width="90%" height="90%">
 <br><em>Ansible structure</em> 
