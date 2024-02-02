@@ -40,7 +40,9 @@ $ unzip awscliv2.zip
 $ sudo ./aws/install
 $ aws configure
 ```
-
+```
+To test,verify and run your terraform code. 
+```
 ```shell
 $ terraform init
 $ terraform plan
@@ -178,6 +180,23 @@ Automate the CI/CD process using Jenkins, thereby streamlining the application d
 
 <p align="center"><img src="screenshots/jenkins/access application.png" width="90%" height="90%">
 <br><em>Accessing the Application using route</em> 
+</p>
+
+### 7. Jenkins Shared Library
+This repository houses a comprehensive Jenkins Shared Library designed to elevate your Continuous Integration and Continuous Deployment (CI/CD) workflows. By centralizing reusable Groovy scripts, this library aims to simplify pipeline definition, enhance code reusability, and streamline your Jenkins pipeline development.
+
+> [!NOTE]
+> Before running your shared library you need some configurations. check on allow default > version to be overridden and include @library changes in job recent changes.
+
+<p align="center"><img src="screenshots/jenkins/global shared library.png" width="90%" height="90%">
+<br><em>Global Pipeline Libraries</em> 
+</p>
+
+> [!NOTE]
+> Add your GitHub Repo,credentials and your vars path in the library path 
+
+<p align="center"><img src="screenshots/jenkins/shared library config.png" width="90%" height="90%">
+<br><em>Global Pipeline Libraries</em> 
 </p>
 
 ## Conclusion
