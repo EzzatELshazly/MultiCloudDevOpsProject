@@ -40,9 +40,9 @@ $ unzip awscliv2.zip
 $ sudo ./aws/install
 $ aws configure
 ```
-```
-To test,verify and run your terraform code. 
-```
+> [!NOTE]
+> To test,verify and run your terraform code. 
+
 ```shell
 $ terraform init
 $ terraform plan
@@ -83,9 +83,9 @@ $ ansible-playbook -i inventory/aws_ec2.yml playbook.yml
 <br><em>Connect to your Ec2</em> 
 </p>
 
-```
+
 you can access you sonarqube by writing yourIp:9000
-```
+
 > [!NOTE]
 > You can not run sonarqube in ec2 t2.micro instance. you need a t2.large.
 
@@ -105,24 +105,24 @@ Implemented a centralized monitoring and logging system within the OpenShift clu
 Containerizing the Java application is a key part of this project, ensuring environment consistency and ease of deployment. The development of a Dockerfile, detailing all dependencies and configurations, leads to a containerized version of the Java application. 
 > [!NOTE]
 > Before building the image you need to: chmod +x gradlew
-```
+
 To build your image run the following command
-```
+
 ```shell
 $ sudo docker build -t nameOfYourApp:tag .
 ```
-```
+
 To run your image run the following command on a specific port
-```
+
 ```shell
 $ sudo docker run -d -p 8081:8080 (for example) nameOfYourApp:tag 
 ```
 > [!NOTE]
 > Note if the port does not run try to add this port in the firewall
 
-```
+
 To check your running containers
-```
+
 ```shell
 $ sudo docker ps
 ```
