@@ -40,6 +40,13 @@ $ unzip awscliv2.zip
 $ sudo ./aws/install
 $ aws configure
 ```
+
+```shell
+$ terraform init
+$ terraform plan
+$ terraform apply
+```
+
 <p align="center"><img src="screenshots/terraform/terraform tree last.png" width="90%" height="90%">
 <br><em>Terraform structure</em> 
 </p>
@@ -74,6 +81,12 @@ $ ansible-playbook -i inventory/aws_ec2.yml playbook.yml
 <br><em>Connect to your Ec2</em> 
 </p>
 
+```
+you can access you sonarqube by writing yourIp:9000
+```
+> [!NOTE]
+> You can not run sonarqube in ec2 t2.micro instance. you need a t2.large.
+
 <p align="center"><img src="screenshots/Ansible/sonarqube login.png" width="90%" height="90%">
 <br><em>SonarQube login</em> 
 </p>
@@ -88,6 +101,29 @@ Implemented a centralized monitoring and logging system within the OpenShift clu
 ### 5. Containerization of the Java Application
 
 Containerizing the Java application is a key part of this project, ensuring environment consistency and ease of deployment. The development of a Dockerfile, detailing all dependencies and configurations, leads to a containerized version of the Java application. 
+> [!NOTE]
+> Before building the image you need to: chmod +x gradlew
+```
+To build your image run the following command
+```
+```shell
+$ sudo docker build -t nameOfYourApp:tag .
+```
+```
+To run your image run the following command on a specific port
+```
+```shell
+$ sudo docker run -d -p 8081:8080 (for example) nameOfYourApp:tag 
+```
+> [!NOTE]
+> Note if the port does not run try to add this port in the firewall
+
+```
+To check your running containers
+```
+```shell
+$ sudo docker ps
+```
 
 <p align="center"><img src="screenshots/docker/docker build .png" width="90%" height="90%">
 <br><em>Docker build results</em> 
@@ -100,6 +136,13 @@ Containerizing the Java application is a key part of this project, ensuring envi
 ### 6. CI/CD Automation with Jenkins
 
 Automate the CI/CD process using Jenkins, thereby streamlining the application deployment lifecycle. The development of a Jenkins pipeline script integrates various stages, including code build, testing, and deployment. This results in a seamless, automated pipeline that accelerates the release cycle and reduces manual intervention.
+
+> [!NOTE]
+> You need to add your credentials (dockerhub, github, openshift and sonarqube)
+
+<p align="center"><img src="screenshots/jenkins/credentials.png" width="90%" height="90%">
+<br><em>Jenkins credentials</em> 
+</p>
 
 <p align="center"><img src="screenshots/jenkins/jenkins final pipeline run.png" width="90%" height="90%">
 <br><em>Success Pipeline</em> 
